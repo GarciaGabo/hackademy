@@ -1,0 +1,94 @@
+.header-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222222;
+    padding: 20px 0;
+    z-index: 1000;
+    color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+}
+
+.logo p {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.menu-items {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-left: 30px;
+}
+
+.menu-items li {
+    font-size: 16px;
+}
+
+.menu-items a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.auth-buttons .menu-items .plan a:hover {
+    color: red;
+}
+
+.menu-items a:hover {
+    color: #00bfae;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.auth-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.register-btn {
+    background: linear-gradient(180deg, #540072, #4f00b59e);
+    color: white;
+}
+
+.register-btn:hover {
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.679);
+}
+
+.login-btn {
+    background: linear-gradient(180deg, #540072, #4f00b59e);
+    color: white;
+}
+
+.login-btn:hover {
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.679);
+}

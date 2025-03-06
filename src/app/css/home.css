@@ -1,0 +1,192 @@
+.page{
+    width: 100%;
+    padding-top: 85px;
+}
+
+.recomendaciones {
+    max-height: 500px;
+    background: linear-gradient(180deg, #20002c, #3d008e93);
+    padding: 20px;
+}
+
+.recomendaciones h1 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.beneficios {
+    max-height: 250px;
+    background: linear-gradient(145deg, #1a1a1a, #292929);
+    padding: 20px;
+}
+
+.beneficios h1 {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+.beneficios ul {
+    list-style-type: none;
+    padding: 0;
+    color: #dcdcdc;
+    padding-bottom: 18px;
+    text-align: center;
+}
+
+.beneficios li {
+    font-size: 0.9rem;
+    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.beneficios li::before {
+    content: "✔";
+    color: #6f00ff;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.progreso {
+    max-height: 250px;
+    background: #000;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 50px;
+}
+
+.curso {
+    width: 50%;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.curso h2 {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.curso .barra {
+    width: 100%;
+    height: 20px;
+    background: #444;
+    border-radius: 10px;
+}
+
+.curso .barra span {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #20002c, #3d008e93);
+    width: 0%;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+.carousel-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    width: 100%;
+    justify-items: center;
+}
+
+.carousel-controls button {
+    padding: 10px 20px;
+    background-color: #3d008e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    flex: 1;
+    text-align: center;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.carousel-controls button:hover {
+    background-color: #20002c;
+}
+
+@media (max-width: 1024px) {
+    .recomendaciones h1,
+    .beneficios h1 {
+        font-size: 1.8rem;
+    }
+
+    .progreso {
+        padding: 15px;
+    }
+
+    .curso {
+        width: 80%;
+    }
+
+    .carousel-controls button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .recomendaciones h1,
+    .beneficios h1 {
+        font-size: 1.6rem;
+    }
+
+    .progreso {
+        padding: 10px;
+    }
+
+    .curso {
+        width: 100%;
+    }
+
+    .carousel-controls button {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .recomendaciones h1,
+    .beneficios h1 {
+        font-size: 1.4rem;
+    }
+
+    .curso h2 {
+        font-size: 1.2rem;
+    }
+
+    .carousel-controls button {
+        padding: 6px;
+        font-size: 0.7rem;
+    }
+}

@@ -1,0 +1,86 @@
+.carrusel-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carrusel-slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.carrusel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.carrusel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carrusel-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+/* Asegura que los botones se mantengan centrados y accesibles en pantallas pequeñas */
+@media screen and (max-width: 600px) {
+    .prev-btn,
+    .next-btn {
+        font-size: 1.5rem; /* Reduce el tamaño del botón en pantallas pequeñas */
+        padding: 8px; /* Ajusta el padding */
+    }
+    
+    .carrusel-text {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .prev-btn,
+    .next-btn {
+        font-size: 1.2rem; /* Asegura que los botones sean un poco más pequeños si la pantalla es muy pequeña */
+        padding: 6px;
+    }
+}
