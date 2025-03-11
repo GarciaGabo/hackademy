@@ -1,44 +1,53 @@
 .header-nav {
     position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    z-index: 1000;
     background-color: #222222;
     padding: 20px 0;
+    z-index: 1000;
     color: #fff;
 }
 
 .nav-menu {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
-.logo{
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo img {
+.logo .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.logo .logoContainer img {
     width: 40px;
     height: auto;
 }
 
-.logo p{
+.logo .logoContainer p {
     font-size: 20px;
     font-weight: bold;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding-left: 10px;
 }
 
 .menu-items {
     list-style: none;
     display: flex;
-    gap: 30px;
-    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-left: 0;
 }
 
 .menu-items li {
@@ -48,30 +57,92 @@
 .menu-items a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
     transition: color 0.3s ease;
+}
+
+.menu-items .plan a:hover {
+    color: red;
 }
 
 .menu-items a:hover {
     color: #00bfae;
 }
 
-.dropdown-menu {
-    position: absolute;
-    right: 2px;
-    background-color: #000;
-    border: 1px solid #ccc;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    min-width: 150px;
-    list-style: none;
-    padding: 10px 0;
+.menu-items li button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dropdown-menu li a {
-    padding: 8px 16px;
+.menu-items li .register-btn {
+    background: linear-gradient(180deg, #540072, #4f00b59e);
+    color: white;
+}
+
+.menu-items li .register-btn:hover {
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.679);
+}
+
+.menu-items li .login-btn {
+    background: linear-gradient(180deg, #540072, #4f00b59e);
+    color: white;
+}
+
+.menu-items li .login-btn:hover {
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.679);
+}
+
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
     color: #fff;
-    display: block;
+    margin-right: 10px;
 }
 
-.dropdown-menu li a:hover {
-    background-color: #f0f0f0;
+@media (max-width: 768px) {
+    .logoContainer{
+        position: absolute;
+        left: 18px;
+        top: 18px;
+    }
+    .nav-menu {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 23px 0;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-items {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-items.active {
+        display: flex;
+        margin-top: 25px;
+    }
+
+    .hamburger {
+        position: absolute;
+        right: 15px;
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+        color: #fff;
+    }
 }

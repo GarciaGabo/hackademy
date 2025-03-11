@@ -4,7 +4,7 @@
 }
 
 .recomendaciones {
-    max-height: 500px;
+    height: auto;
     background: linear-gradient(180deg, #20002c, #3d008e93);
     padding: 20px;
 }
@@ -18,7 +18,7 @@
 }
 
 .beneficios {
-    max-height: 250px;
+    height: auto;
     background: linear-gradient(145deg, #1a1a1a, #292929);
     padding: 20px;
 }

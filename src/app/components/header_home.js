@@ -19,26 +19,26 @@ export default function Header_home() {
             alert(`Error al cerrar sesión: ${error.message}`);
         }
     };
+
     return (
         <header className="header-nav">
             <nav className="nav-menu">
                 <div className="logo">
-                    <img src="/logo.png" />
-                    <p>HACKACADEMY</p>
+                    <div className="logoContainer">
+                        <img src="/logo.png" alt="logo" />
+                        <p>HACKACADEMY</p>
+                    </div>
+                    <div className="hamburger" onClick={toggleMenu}>
+                        <HiOutlineMenu size={24} />
+                    </div>
                 </div>
-                <div className="auth-buttons">
-                    <ul className="menu-items">
+                <div className="menu">
+                    <ul className={`menu-items ${isMenuOpen ? 'active' : ''}`}>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Simuladores</a></li>
                         <li><a href="#">Mis cursos</a></li>
-                        <li><a href="#" onClick={toggleMenu}><HiOutlineMenu size={18} /></a>
-                            {isMenuOpen && (
-                                <ul className="dropdown-menu">
-                                    <li><a href="#">Perfil</a></li>
-                                    <li><a href="#" onClick={handleLogout}>Cerrar Sesión</a></li>
-                                </ul>
-                            )}
-                        </li>
+                        <li><a href="#">Perfil</a></li>
+                        <li><button className='login-btn' onClick={handleLogout}>Cerrar Sesión</button></li>
                     </ul>
                 </div>
             </nav>

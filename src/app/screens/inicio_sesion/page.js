@@ -1,13 +1,18 @@
 'use client';
 import React, { useState } from "react";
+import { useRouter } from 'next/navigation';
 import { loginWithEmailPassword, loginWithGoogle } from "@/app/lib/auth";
 import "../../css/inicio_sesion.css";
 
 export default function Registro() {
+    const router = useRouter();
+
     const [formData, setFormData] = useState({
         correo: '',
         contrasena: '',
     });
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState('');
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -17,32 +22,43 @@ export default function Registro() {
         }));
     };
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
+        setError('');
+        
         try {
             await loginWithEmailPassword(formData.correo, formData.contrasena);
-            console.log("Usuario ha iniciado sesión");
             alert('Inicio de sesión exitoso');
-            window.location.href = "/screens/home";
+            router.push('/screens/home');
         } catch (error) {
-            alert(`Error al iniciar sesión: ${error.message}`);
+            setError('Error al iniciar sesión. Verifica tus datos e inténtalo de nuevo.');
+        } finally {
+            setIsLoading(false);
         }
     };
 
     const handleGoogleLogin = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
+        setError('');
+
         try {
             await loginWithGoogle();
             alert('Inicio de sesión con Google exitoso');
-            window.location.href = "/screens/home";
+            router.push('/screens/home');
         } catch (error) {
-            alert(`Error al iniciar sesión con Google: ${error.message}`);
+            setError('Error al iniciar sesión con Google. Por favor, inténtalo nuevamente.');
+        } finally {
+            setIsLoading(false);
         }
     };
 
     return (
         <div className="inicio-container">
             <h2 className="titulo">Inicio de Sesión</h2>
+            {error && <div className="error-message" aria-live="polite">{error}</div>}
+            
             <form onSubmit={handleSubmit} className="formulario">
                 <div className="input-group">
                     <label htmlFor="correo" className="label">Correo electrónico</label>
@@ -56,6 +72,7 @@ export default function Registro() {
                         className="input"
                     />
                 </div>
+
                 <div className="input-group">
                     <label htmlFor="contrasena" className="label">Contraseña</label>
                     <input
@@ -68,9 +85,22 @@ export default function Registro() {
                         className="input"
                     />
                 </div>
-                <button type="submit" className="btn-submit">Iniciar sesión</button>
-                <button className="btn-google" onClick={handleGoogleLogin}>
-                    <img src="/google.svg" alt="Google logo" className="google-logo" />Iniciar sesión con Google
+
+                <button 
+                    type="submit" 
+                    className="btn-submit" 
+                    disabled={isLoading}
+                >
+                    {isLoading ? 'Cargando...' : 'Iniciar sesión'}
+                </button>
+
+                <button 
+                    className="btn-google" 
+                    onClick={handleGoogleLogin}
+                    disabled={isLoading}
+                >
+                    <img src="/google.svg" alt="Google logo" className="google-logo" />
+                    {isLoading ? 'Cargando...' : 'Iniciar sesión con Google'}
                 </button>
             </form>
         </div>

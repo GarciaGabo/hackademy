@@ -35,6 +35,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 8px;
+    font-size: 1rem; /* Ajuste de fuente para pantallas grandes */
 }
 
 button {
@@ -64,23 +65,59 @@ button:hover {
     right: 10px;
 }
 
-/* Asegura que los botones se mantengan centrados y accesibles en pantallas pequeñas */
-@media screen and (max-width: 600px) {
-    .prev-btn,
-    .next-btn {
-        font-size: 1.5rem; /* Reduce el tamaño del botón en pantallas pequeñas */
-        padding: 8px; /* Ajusta el padding */
+/* Ajustes para pantallas de tamaño medio */
+@media screen and (max-width: 768px) {
+    .carrusel-container {
+        max-width: 100%; /* El contenedor se expande al 100% en pantallas más pequeñas */
+        border-radius: 5px; /* Bordes más suaves para pantallas pequeñas */
     }
-    
+
     .carrusel-text {
-        font-size: 14px;
+        font-size: 0.9rem; /* Ajuste de fuente más pequeño */
+        bottom: 10px; /* Ajuste de espacio inferior */
+        left: 10px; /* Ajuste de espacio izquierdo */
+        right: 10px; /* Ajuste de espacio derecho */
+        padding: 8px; /* Menos padding en pantallas pequeñas */
+    }
+
+    button {
+        font-size: 1.8rem; /* Tamaño de los botones más pequeño */
+        padding: 8px; /* Menos padding en los botones */
     }
 }
 
+/* Ajustes para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+    .carrusel-container {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+
+    .carrusel-text {
+        font-size: 0.85rem; /* Reduce el tamaño de la fuente aún más */
+        padding: 6px; /* Menos padding */
+    }
+
+    button {
+        font-size: 1.5rem; /* Botones más pequeños */
+        padding: 7px; /* Menos padding */
+    }
+}
+
+/* Ajustes para pantallas muy pequeñas (móviles) */
 @media screen and (max-width: 400px) {
-    .prev-btn,
-    .next-btn {
-        font-size: 1.2rem; /* Asegura que los botones sean un poco más pequeños si la pantalla es muy pequeña */
-        padding: 6px;
+    .carrusel-container {
+        max-width: 100%;
+        border-radius: 3px; /* Bordes más pequeños */
+    }
+
+    .carrusel-text {
+        font-size: 0.8rem; /* Aún más pequeño para textos en pantallas muy pequeñas */
+        padding: 5px; /* Reducir padding */
+    }
+
+    button {
+        font-size: 1.2rem; /* Botones más pequeños para pantallas muy pequeñas */
+        padding: 6px; /* Reducir padding */
     }
 }
