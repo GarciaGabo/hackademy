@@ -69,7 +69,7 @@
     color: #00bfae;
 }
 
-.menu-items li button {
+.menu-items li .register-btn {
     padding: 10px 20px;
     border: none;
     border-radius: 25px;
@@ -84,15 +84,6 @@
 }
 
 .menu-items li .register-btn:hover {
-    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.679);
-}
-
-.menu-items li .login-btn {
-    background: linear-gradient(180deg, #540072, #4f00b59e);
-    color: white;
-}
-
-.menu-items li .login-btn:hover {
     box-shadow: 0 1px 5px rgba(255, 255, 255, 0.679);
 }
 
@@ -135,6 +126,7 @@
     .menu-items.active {
         display: flex;
         margin-top: 25px;
+        gap: 18px;
     }
 
     .hamburger {

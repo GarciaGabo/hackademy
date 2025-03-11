@@ -38,7 +38,9 @@ export default function Header_home() {
                         <li><a href="#">Simuladores</a></li>
                         <li><a href="#">Mis cursos</a></li>
                         <li><a href="#">Perfil</a></li>
-                        <li><button className='login-btn' onClick={handleLogout}>Cerrar Sesión</button></li>
+                        <li>
+                            <a className='register-btn' onClick={handleLogout}>Cerrar Sesión</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
