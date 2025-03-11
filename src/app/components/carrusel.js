@@ -49,8 +49,8 @@ export default function Carrusel() {
 
     return (
         <div>
-            <button onClick={prevItem} className="prev-btn">{"<"}</button>
             <div className="carrusel-container">
+            <button onClick={prevItem} className="prev-btn">{"<"}</button>
                 <div className="carrusel-slides" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {items.map((item) => (
                         <div key={item.id} className="carrusel-item">
@@ -62,8 +62,8 @@ export default function Carrusel() {
                         </div>
                     ))}
                 </div>
+                <button onClick={nextItem} className="next-btn">{">"}</button>
             </div>
-            <button onClick={nextItem} className="next-btn">{">"}</button>
         </div>
     );
 }

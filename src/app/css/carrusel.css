@@ -35,14 +35,14 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 8px;
-    font-size: 1rem; /* Ajuste de fuente para pantallas grandes */
+    font-size: 1rem;
 }
 
 button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     padding: 10px;
     position: absolute;
@@ -65,28 +65,26 @@ button:hover {
     right: 10px;
 }
 
-/* Ajustes para pantallas de tamaño medio */
 @media screen and (max-width: 768px) {
     .carrusel-container {
-        max-width: 100%; /* El contenedor se expande al 100% en pantallas más pequeñas */
-        border-radius: 5px; /* Bordes más suaves para pantallas pequeñas */
+        max-width: 100%;
+        border-radius: 5px;
     }
 
     .carrusel-text {
-        font-size: 0.9rem; /* Ajuste de fuente más pequeño */
-        bottom: 10px; /* Ajuste de espacio inferior */
-        left: 10px; /* Ajuste de espacio izquierdo */
-        right: 10px; /* Ajuste de espacio derecho */
-        padding: 8px; /* Menos padding en pantallas pequeñas */
+        font-size: 0.9rem;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 8px;
     }
 
     button {
-        font-size: 1.8rem; /* Tamaño de los botones más pequeño */
-        padding: 8px; /* Menos padding en los botones */
+        font-size: 1.2rem;
+        padding: 8px;
     }
 }
 
-/* Ajustes para pantallas más pequeñas */
 @media screen and (max-width: 600px) {
     .carrusel-container {
         max-width: 100%;
@@ -94,30 +92,29 @@ button:hover {
     }
 
     .carrusel-text {
-        font-size: 0.85rem; /* Reduce el tamaño de la fuente aún más */
-        padding: 6px; /* Menos padding */
+        font-size: 0.85rem;
+        padding: 6px;
     }
 
     button {
-        font-size: 1.5rem; /* Botones más pequeños */
-        padding: 7px; /* Menos padding */
+        font-size: 0.9rem;
+        padding: 7px;
     }
 }
 
-/* Ajustes para pantallas muy pequeñas (móviles) */
 @media screen and (max-width: 400px) {
     .carrusel-container {
         max-width: 100%;
-        border-radius: 3px; /* Bordes más pequeños */
+        border-radius: 3px;
     }
 
     .carrusel-text {
-        font-size: 0.8rem; /* Aún más pequeño para textos en pantallas muy pequeñas */
-        padding: 5px; /* Reducir padding */
+        font-size: 0.8rem;
+        padding: 5px;
     }
 
     button {
-        font-size: 1.2rem; /* Botones más pequeños para pantallas muy pequeñas */
-        padding: 6px; /* Reducir padding */
+        font-size: 0.6rem;
+        padding: 6px;
     }
 }

@@ -136,6 +136,7 @@
     .menu-items.active {
         display: flex;
         margin-top: 25px;
+        gap: 18px;
     }
 
     .hamburger {

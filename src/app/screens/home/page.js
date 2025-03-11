@@ -36,12 +36,13 @@ export default function Home() {
     };
 
     const cursoActual = cursos[currentIndex];
+    const [firstName] = user ? user.displayName.split(" ") : [""];
 
     return (
         <div className="page">
             <Header_home />
             <div className="recomendaciones">
-                <h1>Podría interesarte {user ? user.displayName : ""} :</h1>
+                <h1>Podría interesarte {user ? firstName : ""} :</h1>
                 <Carrusel />
             </div>
             <div className="beneficios">
